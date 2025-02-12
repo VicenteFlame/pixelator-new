@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { Slider } from "./ui/slider"
 import { Button } from "./ui/button"
 import { Label } from "./ui/label"
@@ -24,7 +24,7 @@ export default function ImagePixelator() {
     }
   }
 
-  const pixelateImage = () => {
+  const pixelateImage = useCallback(() => {
     const canvas = canvasRef.current
     const ctx = canvas?.getContext('2d')
     if (!canvas || !ctx || !image) return
@@ -41,8 +41,6 @@ export default function ImagePixelator() {
 
       for (let y = 0; y < canvas.height; y += pixelSize) {
         for (let x = 0; x < canvas.width; x += pixelSize) {
-          const i = (y * canvas.width + x) * 4
-          
           let r = 0, g = 0, b = 0
           let count = 0
           
@@ -80,7 +78,7 @@ export default function ImagePixelator() {
       ctx.putImageData(imageData, 0, 0)
     }
     img.src = image
-  }
+  }, [image, pixelSize, blackAndWhite, bwThreshold])
 
   const handleDownload = () => {
     const canvas = canvasRef.current
@@ -96,7 +94,7 @@ export default function ImagePixelator() {
     if (image) {
       pixelateImage()
     }
-  }, [image, pixelSize, blackAndWhite, bwThreshold])
+  }, [image, pixelSize, blackAndWhite, bwThreshold, pixelateImage])
 
   return (
     <div>
@@ -108,7 +106,7 @@ export default function ImagePixelator() {
         </h1>
       </div>
       <div className="container mx-auto p-4 max-w-2xl">
-        <h1 className="text-4xl font-bold mb-4 text-center">Online Free Image Pixelator</h1>
+        <h1 className="text-4xl font-bold mb-4 text-center">Free Image Pixelator</h1>
         <div className="mb-4">
           <Label htmlFor="image-upload" className="block mb-2">Upload an image:</Label>
           <input
@@ -176,7 +174,7 @@ export default function ImagePixelator() {
         )}
       </div>
       <div className="container mx-auto p-4 max-w-4xl">
-        <h2 className="text-3xl font-bold mb-6 text-center">Gallery</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Galería de Ejemplos</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow relative group">
@@ -202,7 +200,7 @@ export default function ImagePixelator() {
         </div>
       </div>
       <div className="container mx-auto p-4 max-w-4xl mt-12 mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">FAQ</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
         <div className="space-y-6">
           {faqItems.map((item, index) => (
             <div key={index} className="border-b border-gray-200 pb-4">
