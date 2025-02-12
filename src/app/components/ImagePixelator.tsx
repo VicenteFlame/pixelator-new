@@ -174,7 +174,7 @@ export default function ImagePixelator() {
         )}
       </div>
       <div className="container mx-auto p-4 max-w-4xl">
-        <h2 className="text-3xl font-bold mb-6 text-center">Galería de Ejemplos</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Gallery</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow relative group">
@@ -200,7 +200,7 @@ export default function ImagePixelator() {
         </div>
       </div>
       <div className="container mx-auto p-4 max-w-4xl mt-12 mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">FAQ</h2>
         <div className="space-y-6">
           {faqItems.map((item, index) => (
             <div key={index} className="border-b border-gray-200 pb-4">
