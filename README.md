@@ -3,7 +3,7 @@
 A simple web app that transforms images into black and white pixelated versions.
 
 ## Live Demo
-Visit [https://pixelator-new.vercel.app](https://pixelator-new.vercel.app) to try it.
+Visit [https://www.image-pixelator.com](https://www.image-pixelator.com) to try it.
 
 ## Usage
 1. Upload an image
