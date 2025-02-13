@@ -106,20 +106,21 @@ export default function ImagePixelator() {
         </h2>
       </div>
       <div className="container mx-auto p-4 max-w-2xl">
-        <h1 className="text-4xl font-bold mb-4 text-center">Free Image Pixelator Online</h1>
+        <h1 className="text-4xl font-bold mb-14 text-center">Free Image Pixelator Online</h1>
         <div className="mb-4">
-          <Label htmlFor="image-upload" className="block mb-2">Upload an image:</Label>
+          <Label htmlFor="image-upload" className="block mb-4">Upload an image:</Label>
           <input
             id="image-upload"
             type="file"
             accept="image/*"
             onChange={handleImageUpload}
-            className="block w-full text-sm text-gray-500
-              file:mr-4 file:py-2 file:px-4
+            className="block w-full text-base text-gray-500 cursor-pointer
+              file:mr-4 file:py-3 file:px-6
               file:rounded-full file:border-0
-              file:text-sm file:font-semibold
-              file:bg-violet-50 file:text-violet-700
-              hover:file:bg-violet-100"
+              file:text-base file:font-semibold
+              file:bg-violet-700 file:text-violet-50
+              hover:file:bg-violet-900
+              file:cursor-pointer"
           />
         </div>
         {image && (
