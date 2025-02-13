@@ -1,10 +1,10 @@
 export const faqItems = [
   {
     question: "What is Image Pixelator?",
-    answer: "Image Pixelator is a web tool that transforms your images into pixelated art, with options for both color and B&W effects."
+    answer: "Image Pixelator is an online web tool that transforms your images into pixelated art, with options for both color and B&W effects."
   },
   {
-    question: "How to Use Image Pixelator?",
+    question: "How to Use Image Pixelator Online?",
     answer: "Simply upload an image, use the slider to adjust pixel size, and adjust the sensitivity of B&W mode if activated, then download your creation."
   },
   {

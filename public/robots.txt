@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.image-pixelator.com/
+
+# Sitemaps
+Sitemap: https://www.image-pixelator.com/sitemap.xml

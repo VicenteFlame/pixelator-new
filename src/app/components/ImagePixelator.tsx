@@ -99,14 +99,14 @@ export default function ImagePixelator() {
   return (
     <div>
       <div className="container mx-auto p-4">
-        <h1 className="text-7xl font-bold mb-4">
+        <h2 className="text-7xl font-bold mb-4">
           Create{' '}
           <span className="text-8xl font-pixel text-violet-600">pixelated</span>
           {' '}images fast
-        </h1>
+        </h2>
       </div>
       <div className="container mx-auto p-4 max-w-2xl">
-        <h1 className="text-4xl font-bold mb-4 text-center">Free Image Pixelator</h1>
+        <h1 className="text-4xl font-bold mb-4 text-center">Free Image Pixelator Online</h1>
         <div className="mb-4">
           <Label htmlFor="image-upload" className="block mb-2">Upload an image:</Label>
           <input
@@ -140,6 +140,7 @@ export default function ImagePixelator() {
               <div className="flex justify-between gap-4">
                 <Button
                   onClick={() => setBlackAndWhite(!blackAndWhite)}
+                  aria-label="switch between colored mode and black and white mode"
                   className={`${
                     blackAndWhite 
                       ? 'bg-gray-800 hover:bg-gray-900' 
@@ -148,7 +149,7 @@ export default function ImagePixelator() {
                 >
                   {blackAndWhite ? 'Black&White' : 'Colored'}
                 </Button>
-                <Button onClick={handleDownload} className="bg-violet-600 hover:bg-violet-700">
+                <Button onClick={handleDownload} className="bg-violet-600 hover:bg-violet-700" aria-label="download pixelated image">
                   <Download className="mr-2 h-4 w-4" /> Download
                 </Button>
               </div>
@@ -174,7 +175,7 @@ export default function ImagePixelator() {
         )}
       </div>
       <div className="container mx-auto p-4 max-w-4xl">
-        <h2 className="text-3xl font-bold mb-6 text-center">Gallery</h2>
+        <h3 className="text-3xl font-bold mb-6 text-center">Gallery</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow relative group">
@@ -200,7 +201,7 @@ export default function ImagePixelator() {
         </div>
       </div>
       <div className="container mx-auto p-4 max-w-4xl mt-12 mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">FAQ</h2>
+        <h3 className="text-3xl font-bold mb-6 text-center">FAQ</h3>
         <div className="space-y-6">
           {faqItems.map((item, index) => (
             <div key={index} className="border-b border-gray-200 pb-4">
